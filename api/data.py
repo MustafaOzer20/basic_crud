@@ -95,8 +95,6 @@ ex3 = ExampleData(
 ex3.save()
 
 
-print(memory.get_data())
-
 
 
 
