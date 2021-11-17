@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "03e8d5d5-81d9-4d4c-835b-0767c5c44fb6",
+		"name": "basic_crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "overview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "data-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/data-list/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"data-list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "data-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"id\": \"id\",\r\n            \"title\": \"title\",\r\n            \"problem\": \"problem\",\r\n            \"point\": 2,\r\n            \"level\": \"level\",\r\n            \"language\": \"language\",\r\n            \"input\": \"input\",\r\n            \"expected_output\": \"expected_output\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/data-create/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"data-create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "data-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"3136e3cd-c90c-48bb-b9a9-60ca68382ad7\",\r\n        \"title\": \"Say hello with python - UPDATE\",\r\n        \"problem\": \"Print hello world in Python using print - UPDATE\",\r\n        \"point\": 1,\r\n        \"level\": \"beginner - UPDATE\",\r\n        \"language\": \"python - UPDATE\",\r\n        \"input\": \"\",\r\n        \"expected_output\": \"Hello World - UPDATE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/data-update/3136e3cd-c90c-48bb-b9a9-60ca68382ad7/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"data-update",
+						"3136e3cd-c90c-48bb-b9a9-60ca68382ad7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "data-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/data-delete/3136e3cd-c90c-48bb-b9a9-60ca68382ad7/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"data-delete",
+						"3136e3cd-c90c-48bb-b9a9-60ca68382ad7",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
