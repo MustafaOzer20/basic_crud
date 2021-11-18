@@ -1,13 +1,22 @@
 
 class Memory():
     all_data = []
-    def create(self, json):
-        (_, index) = self.find_data(id=json["id"])
+
+    def id_is_unique(self, id):
+        (_, index) = self.find_data(id=id)
         if index != -1:
+            return 0
+        return 1
+
+    def create(self, json):
+        if not self.id_is_unique(json['id']):
             return {
                 "Error":"ID unique olmali"
             }
         self.all_data.append(json)
+        return {
+            "success": "Veri Eklendi."
+        }
 
     def update(self, id, new_json):
         (_, index) = self.find_data(id)
@@ -15,8 +24,15 @@ class Memory():
             return {
                 "Error":"Veri Yok"
             }
-
+        if id != new_json['id'] and not self.id_is_unique(new_json['id']):
+            return {
+                "Error":"ID unique olmali"
+            }
         self.all_data[index] = new_json
+        return {
+            "success": "Veri Guncellendi."
+        }
+
 
     def delete(self, id):
         (_, index) = self.find_data(id)
@@ -62,7 +78,7 @@ class ExampleData():
         }
     def save(self):
         global memory
-        memory.create(self.data)
+        return memory.create(self.data)
 
 
 

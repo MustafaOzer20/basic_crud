@@ -53,16 +53,16 @@ def dataCreate(request):
         input=new_data[6],
         expected_output=new_data[7]
         )
-    ex.save()
-    return Response(new_data)
+    message = ex.save()
+    return Response(message)
 
 @api_view(['PUT'])
 def dataUpdate(request, id):
     new_data = validate_data(request.data)
     if type(new_data) == dict:
         return Response(new_data)
-    memory.update(id, request.data)
-    return Response(new_data)
+    message = memory.update(id, request.data)
+    return Response(message)
 
 @api_view(['DELETE'])
 def dataDelete(request,id):
